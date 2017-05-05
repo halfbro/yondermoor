@@ -1,11 +1,12 @@
-var gulp = require('gulp');
-var browserify = require('gulp-browserify');
-var sass = require('gulp-ruby-sass')
-var eslint = require('gulp-eslint');
-var sasslint = require('gulp-sass-lint');
+const gulp = require('gulp');
+const browserify = require('gulp-browserify');
+const sass = require('gulp-ruby-sass');
+const eslint = require('gulp-eslint');
+const sasslint = require('gulp-sass-lint');
+const concat = require('gulp-concat');
 
-var paths = {
-  js: ['js/**/*.js'],
+const paths = {
+  js: ['js/**/*.js', 'js/**/*.jsx'],
   css: ['css/**/*.scss', 'css/**/*.sass'],
 };
 
@@ -13,15 +14,23 @@ gulp.task('js', () => {
   gulp.src(paths.js)
     .pipe(browserify({
       insertGlobals : true,
+      insertGlobalVars: {
+        jQuery: () => 'require("jquery")',
+        '$': () => 'require("jquery")',
+        React: () => 'require("react")',
+        ReactDOM: () => 'require("react-dom")',
+      },
       debug : true,
     }))
-    .pipe(gulp.dest('build.js'))
+    .pipe(concat('build.js'))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('css', () => {
   sass(paths.css)
     .on('error', sass.logError)
-    .pipe(gulp.dest('build.css'));
+    .pipe(concat('build.css'))
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('lintjs', () => {
