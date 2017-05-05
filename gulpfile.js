@@ -1,9 +1,13 @@
 const gulp = require('gulp');
 const browserify = require('gulp-browserify');
-const sass = require('gulp-ruby-sass');
+const envify = require('gulp-envify');
+const sass = require('gulp-sass');
 const eslint = require('gulp-eslint');
 const sasslint = require('gulp-sass-lint');
 const concat = require('gulp-concat');
+
+const process = require('process');
+require('dotenv').config();
 
 const paths = {
   js: ['js/**/*.js', 'js/**/*.jsx'],
@@ -22,13 +26,14 @@ gulp.task('js', () => {
       },
       debug : true,
     }))
+    .pipe(envify(process.env))
     .pipe(concat('build.js'))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('css', () => {
-  sass(paths.css)
-    .on('error', sass.logError)
+  return gulp.src(paths.css)
+    .pipe(sass().on('error', sass.logError))
     .pipe(concat('build.css'))
     .pipe(gulp.dest('./'));
 });
