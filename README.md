@@ -6,9 +6,9 @@
 2. `npm install`
 3. `gulp build` or `gulp watch` for continuous building
 4. One of the following:
-  * `python -m SimpleHTTPServer`
-  * `npm install -g http-server` -> `http-server`
-  * Open `index.html` in your browser
+    * `python -m SimpleHTTPServer`
+    * `npm install -g http-server` -> `http-server`
+    * Open `index.html` in your browser
 
 ### Stack
 
