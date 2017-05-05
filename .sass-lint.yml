@@ -1,0 +1,3 @@
+rules:
+  no-ids: 0
+  hex-length: 6

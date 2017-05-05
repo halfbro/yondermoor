@@ -1,4 +1,27 @@
+$hud-bg-color: rgba(255, 255, 255, .5)
+$hud-fg-color: #ffffff
+
 *
   box-sizing: border-box
   margin: 0
   padding: 0
+
+body
+  height: 100vh
+  left: 0
+  margin: auto
+  overflow: none
+  position: fixed
+  top: 0
+
+// HTML that overlays the THREE WebGL renderer
+#overlay
+  left: 0
+  position: fixed
+  top: 0
+
+  // UI elements that are not windows
+  .hud
+    background-color: $hud-bg-color
+    color: $hud-fg-color
+    position: fixed

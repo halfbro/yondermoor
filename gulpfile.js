@@ -1,11 +1,15 @@
 const gulp = require('gulp');
-const browserify = require('gulp-browserify');
-const envify = require('gulp-envify');
-const sass = require('gulp-sass');
-const eslint = require('gulp-eslint');
-const sasslint = require('gulp-sass-lint');
 const concat = require('gulp-concat');
 
+const browserify = require('gulp-browserify');
+const envify = require('gulp-envify');
+
+const sass = require('gulp-sass');
+
+const eslint = require('gulp-eslint');
+const sasslint = require('gulp-sass-lint');
+
+// Add NODE_ENV from our .env file to browserify/envify
 const process = require('process');
 require('dotenv').config();
 
@@ -16,13 +20,14 @@ const paths = {
 
 gulp.task('js', () => {
   gulp.src(paths.js)
-    .pipe(browserify({
+    .pipe(browserify({ // also runs reactify as specified in the package.json
       insertGlobals : true,
       insertGlobalVars: {
         jQuery: () => 'require("jquery")',
         '$': () => 'require("jquery")',
         React: () => 'require("react")',
         ReactDOM: () => 'require("react-dom")',
+        THREE: () => 'require("three")',
       },
       debug : true,
     }))

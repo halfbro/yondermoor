@@ -10,6 +10,7 @@
       ]
     ]
   },
+  "sasslintConfig": ".sass-lint.yml",
   "version": "1.0.0",
   "description": "Summer Jam Game",
   "main": "index.js",
