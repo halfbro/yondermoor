@@ -1,12 +1,12 @@
 {
-  "name": "summer_jam",
+  "name": "Yondermoor",
   "version": "1.0.0",
-  "description": "fuck",
+  "description": "Summer Jam Game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp"
   },
-  "author": "",
+  "author": "halfbro and Meshiest",
   "license": "ISC",
   "dependencies": {
     "babel": "^6.23.0",
