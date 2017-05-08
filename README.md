@@ -3,9 +3,8 @@
 ### Getting Started
 
 1. `git clone ...`
-2. `npm install`
-3. `brunch build` or `brunch watch --server` for continuous building
-4. View at `localhost:8000` if you chose to watch
+2. `brunch build` or `brunch watch --server` for continuous building
+3. View at `localhost:8000` if you chose to watch
 
 ### Stack
 
