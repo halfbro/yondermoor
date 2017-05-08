@@ -1,15 +1,11 @@
-window.THREE = THREE;
-
 // Game configuration for easy access
-window.CONFIG = {
-  UI: {
-    FOV: 90,
-  },
-};
 
-const Game = require('./game.js');
-const Overlay = require('./overlay.js');
-const Renderer = require('./renderer.js');
+const ReactDOM = require('react-dom');
+const React = require('react');
+
+const Game = require('js/game');
+const Overlay = require('js/overlay');
+const Renderer = require('js/renderer');
 
 let game = window.Yondermoor = new Game();
 

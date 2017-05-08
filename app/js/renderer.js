@@ -1,3 +1,7 @@
+const THREE = require('three');
+const CONFIG = require('js/config');
+const $ = require('jquery');
+
 module.exports = class {
   /* Creates a THREE renderer linked to the provided game */
   constructor(game) {

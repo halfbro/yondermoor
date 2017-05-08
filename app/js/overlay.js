@@ -1,3 +1,4 @@
+const React = require('react');
 module.exports = class extends React.Component {
   /* Default react constructor, binds game to overlay */
   constructor(props) {

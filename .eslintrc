@@ -4,14 +4,6 @@
     "browser": true,
     "node": true
   },
-  "globals": {
-    "$": true,
-    "jQuery": true,
-    "React": true,
-    "ReactDOM": true,
-    "THREE": true,
-    "CONFIG": true
-  },
   "ecmaVersion": 6,
   "parser": "babel-eslint",
   "extends": "eslint:recommended",
