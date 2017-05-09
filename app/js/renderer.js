@@ -37,7 +37,6 @@ module.exports = class {
     $(window).resize(this.resize.bind(this));
 
     this.render = this.render.bind(this);
-    this.render();
   }
 
   /* Callback for window resizing to update camera aspect ratio */
