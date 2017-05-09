@@ -16,7 +16,7 @@
 * WebRTC
 * Sass
 
-### Linters (`gulp lint`)
+### Linters
 
 * sass-lint
 * eslint
