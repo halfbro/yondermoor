@@ -19,10 +19,16 @@ module.exports = class {
     */
 
     // example geometry
-    this.boxGeom = new THREE.CubeGeometry( 200, 200, 200);
-    this.boxMat = new THREE.MeshStandardMaterial({color: 0xff0000});
-    this.boxMesh = new THREE.Mesh(this.boxGeom, this.boxMesh);
+    this.boxMesh = new THREE.Mesh(
+      new THREE.CubeGeometry( 200, 200, 200),
+      new THREE.MeshStandardMaterial({color: 0xff0000}));
     this.scene.add(this.boxMesh);
+
+    this.scene.add(new THREE.AmbientLight(0x222222));
+    let light = new THREE.DirectionalLight(0x555555, 1);
+    light.position.z = 10;
+    light.position.y = 10;
+    this.scene.add(light);
 
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
