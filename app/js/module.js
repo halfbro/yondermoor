@@ -58,6 +58,25 @@ Module.BaseModule = class {
   }
 };
 
+/* Scene superclass for rendering game scenes like islands, rooms, or 3d menus */
+Module.Scene = class extends Module.BaseModule {
+  constructor(Mod, game) {
+    super(Mod, game);
+  }
+
+  /* Called once to initialize the scene */
+  init() {}
+
+  /* Called every time Before the scene is rendered */
+  load() {}
+
+  /* Before the scene is displayed */
+  onEnter() {}
+
+  /* After the scene is faded out */
+  onExit() {}
+};
+
 /* World generator superclass */
 Module.Generator = class extends Module.BaseModule {
   constructor(Mod, game) {
