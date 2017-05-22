@@ -50,14 +50,25 @@ Module.loadModule = function(game, path) {
   game.addModule(Mod);
 };
 
-/* World generator superclass */
-Module.Generator = class {
+/* Base Module superclass */
+Module.BaseModule = class {
   constructor(Mod, game) {
     this.game = game;
     this.Mod = Mod;
   }
 };
 
+/* World generator superclass */
+Module.Generator = class extends Module.BaseModule {
+  constructor(Mod, game) {
+    super(Mod, game);
+  }
+
+  /* Generates the world */
+  generate() {
+
+  }
+};
 /* World generation priorities */
 Module.Generator.priority = {
   TERRAIN: 40,

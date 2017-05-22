@@ -13,5 +13,6 @@ module.exports = class extends Module.Generator {
 
   generate() {
     Module.log(this, 'Generating');
+    //this.game.scene.add()
   }
 };

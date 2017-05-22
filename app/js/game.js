@@ -6,8 +6,13 @@ module.exports = class {
 
     // dictionary of modules the game will interface with
     this.modules = {
-      generator: []
+      generator: [],
+      script: [],
+      utility: [],
     };
+
+    // mapping of module directory to object
+    this.mods = {};
   }
 
   /* Starts the game after all initialization */
@@ -55,6 +60,7 @@ module.exports = class {
         // check if this type of module exists
         if(typeof game.modules[type] !== 'undefined') {
           game.modules[type].push(mod);
+          game.mods[Mod.__directory] = mod;
         } else {
           Module.log(Mod, 'Undefined module type "', type, '"');
         }
