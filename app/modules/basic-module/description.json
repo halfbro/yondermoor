@@ -1,0 +1,10 @@
+{
+  "name": "Basic Generator",
+  "version": "0.0.1",
+  "description": "A Basic World Generator",
+  "modType": [
+    "generator"
+  ],
+  "dependencies": [
+  ]
+}
