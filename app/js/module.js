@@ -55,6 +55,16 @@ Module.BaseModule = class {
   constructor(Mod, game) {
     this.game = game;
     this.Mod = Mod;
+
+    this.log = this.log.bind(this);
+  }
+
+  /* Shorthand for Module.log(this, message); */
+  log() {
+    let args = [];
+    for(let i = 0; i < arguments.length; i++)
+      args.push(arguments[i]);
+    Module.log(this, args.join(' '));
   }
 };
 
