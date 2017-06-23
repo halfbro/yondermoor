@@ -27,6 +27,7 @@
     "jquery": "^3.2.1",
     "jquery-ui": "^1.12.1",
     "json-brunch": "^1.5.4",
+    "perlin-noise": "0.0.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "three": "^0.85.2",
