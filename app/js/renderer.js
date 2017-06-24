@@ -9,7 +9,7 @@ module.exports = class {
 
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(CONFIG.UI.FOV, window.innerWidth / window.innerHeight, 1, 10000);
-    this.camera.position.y = 800;
+    this.camera.position.y = 600;
     this.camera.rotation.y = -0.7; 
 
     // TODO Create Geometry
@@ -27,8 +27,8 @@ module.exports = class {
 
     this.scene.add(new THREE.AmbientLight(0x222222));
     let light = new THREE.DirectionalLight(0x555555, 2);
-    light.position.z = 10;
     light.position.y = 10;
+    light.rotation.z = 0.1;
     this.scene.add(light);
 
     this.renderer = new THREE.WebGLRenderer();
@@ -57,8 +57,8 @@ module.exports = class {
 
     this.boxMesh.rotation.x += 0.01;
     this.boxMesh.rotation.y += 0.02;
-    this.camera.position.x = Math.cos(this.boxMesh.rotation.y) * 600;
-    this.camera.position.z = Math.sin(this.boxMesh.rotation.y) * 600;
+    this.camera.position.x = Math.cos(this.boxMesh.rotation.y) * 800;
+    this.camera.position.z = Math.sin(this.boxMesh.rotation.y) * 800;
     this.camera.lookAt(new THREE.Vector3( 0, 0, 0 ));
     this.renderer.render(this.scene, this.camera);
   }

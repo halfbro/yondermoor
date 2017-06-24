@@ -6,9 +6,10 @@
     "generator"
   ],
   "defaults": {
-    "WIDTH": 64,
-    "HEIGHT": 5,
-    "WATERLEVEL": 1
+    "LEVEL_THRESHOLD": 0.2,
+    "DIAMETER": 128,
+    "HEIGHT": 20,
+    "WATERLEVEL": 4
   },
   "dependencies": [
   ]
